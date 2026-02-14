@@ -42,13 +42,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t delay_ms = 500; // Delay variable in milliseconds, adjust to control speed
+static const uint32_t DELAY_MS = 500U; /* Delay in milliseconds */
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -96,10 +94,10 @@ int main(void)
   while (1)
   {
 	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
-	  HAL_Delay(delay_ms);
+	  HAL_Delay(DELAY_MS);
 
 	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
-	  HAL_Delay(delay_ms);
+	  HAL_Delay(DELAY_MS);
 
     /* USER CODE END WHILE */
 
@@ -158,7 +156,7 @@ void SystemClock_Config(void)
   * @param None
   * @retval None
   */
-static void MX_GPIO_Init(void)
+void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */

@@ -19,8 +19,8 @@
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef MAIN_HEADER
+#define MAIN_HEADER
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,6 +51,8 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
+void SystemClock_Config(void);
+void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -68,4 +70,4 @@ void Error_Handler(void);
 }
 #endif
 
-#endif /* __MAIN_H */
+#endif /* MAIN_HEADER */
